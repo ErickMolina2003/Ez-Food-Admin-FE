@@ -24,7 +24,9 @@
 
 <body>
 
-    <div class="login">
+    <!-- LOGIN -->
+
+    <!-- <div class="login">
         <div class="container login-container">
             <div class="row">
                 <div class="col-12">
@@ -77,6 +79,121 @@
                 </div>
             </div>
         </div>
+    </div> -->
+
+    <!-- SIDE-BAR -->
+
+    <div class="sideBar position-sticky">
+        <div class="offcanvas offcanvas-start show vertical-sidebar" tabindex="-1" id="offcanvasExample"
+            aria-labelledby="offcanvasExampleLabel" style="visibility: visible;">
+            <div class="offcanvas-header">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-4">
+                            <img alt="Ez Food Logo" src="./assets/imagenes/LogoFigmaBlanco.svg" width="70px">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="divider my-2">
+            <div class="offcanvas-body">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            <div class="btn-group-vertical sidebar-btn-container">
+                                <button type="button" class="btn btn-primary sidebar-btn">Empresas</button>
+                                <button type="button" class="btn btn-primary sidebar-btn">Productos</button>
+                                <button type="button" class="btn btn-primary sidebar-btn">Motoristas</button>
+                                <button type="button" class="btn btn-primary sidebar-btn">Ordenes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="offcanvas-footer pb-3">
+                <hr class="divider mb-3">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-2 px-0 pl-5">
+                            <i class="fas fa-sign-out-alt fa-2x pt-2"></i>
+                        </div>
+                        <div class="col-3 px-0">
+                            <button type="button" class="btn btn-primary sidebar-btn pt-0 pb-0">Salir</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-main">
+
+        <!-- NavBar -->
+        <div class="navBar position-sticky pb-3">
+            <div class="container px-0">
+                <nav class="navbar navbar-light bg-light justify-content-between">
+                    <div class="col-6 pl-6" style="margin-left: 20px;">
+                        <div class="row">
+                            <div class="col-2">
+                                <img alt="nav-icon" src="./assets/imagenes/navbar-icon.svg" width="30px">
+                            </div>
+                            <div class="col">
+                                <input class="form-control mr-sm-2" type="search" placeholder="Search"
+                                    aria-label="Search">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <button class="btn btn-primary my-2 my-sm-0" type="submit" style="width: 100%;">Agregar
+                            Empresa</button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+
+        <!-- Empresas -->
+
+        <div class="empresas">
+            <table class="table table-primary empresas-tabla">
+                <thead>
+                    <tr>
+                        <th scope="col">Empresa</th>
+                        <th scope="col">Descripcion</th>
+                        <th scope="col">Rate</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Pizza Hut</th>
+                        <td>Lorem ipsum dolor sit amet.</td>
+                        <td>3.5</td>
+                        <td><button type="button" class="btn btn-primary">Activo</button></td>
+                        <td><i class="fas fa-pencil-alt px-3"></i><i class="fa fa-trash"></i></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Pizza Hut</th>
+                        <td>Lorem ipsum dolor sit amet.</td>
+                        <td>3.5</td>
+                        <td><button type="button" class="btn btn-primary">Activo</button></td>
+                        <td><i class="fas fa-pencil-alt px-3"></i><i class="fa fa-trash"></i></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Pizza Hut</th>
+                        <td>Lorem ipsum dolor sit amet.</td>
+                        <td>3.5</td>
+                        <td><button type="button" class="btn btn-light">Inactivo</button></td>
+                        <td><i class="fas fa-pencil-alt px-3"></i><i class="fa fa-trash"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
     </div>
 
 
