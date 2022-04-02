@@ -1,0 +1,20 @@
+body {
+    height: 100vh;
+}
+
+.login {
+    height: 100%;
+    background-color: #14274A;
+}
+
+.login-container {
+    padding-top: 15vh;
+}
+
+.login-input {
+    background-color: transparent;
+}
+
+.login-btn {
+    width: 100%;
+}
