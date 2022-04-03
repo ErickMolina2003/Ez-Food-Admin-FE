@@ -26,7 +26,7 @@
 
     <!-- LOGIN -->
 
-    <!-- <div class="login">
+    <div class="login oculto">
         <div class="container login-container">
             <div class="row">
                 <div class="col-12">
@@ -79,11 +79,11 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
 
     <!-- SIDE-BAR -->
 
-    <div class="sideBar position-sticky">
+    <div class="sideBar position-sticky oculto">
         <div class="offcanvas offcanvas-start show vertical-sidebar" tabindex="-1" id="offcanvasExample"
             aria-labelledby="offcanvasExampleLabel" style="visibility: visible;">
             <div class="offcanvas-header">
@@ -101,10 +101,10 @@
                     <div class="row justify-content-center">
                         <div class="col-12">
                             <div class="btn-group-vertical sidebar-btn-container">
-                                <button type="button" class="btn btn-primary sidebar-btn">Empresas</button>
-                                <button type="button" class="btn btn-primary sidebar-btn">Productos</button>
-                                <button type="button" class="btn btn-primary sidebar-btn">Motoristas</button>
-                                <button type="button" class="btn btn-primary sidebar-btn">Ordenes</button>
+                                <button type="button" class="btn btn-primary sidebar-btn sidebar-empresas">Empresas</button>
+                                <button type="button" class="btn btn-primary sidebar-btn sidebar-productos">Productos</button>
+                                <button type="button" class="btn btn-primary sidebar-btn sidebar-motoristas">Motoristas</button>
+                                <button type="button" class="btn btn-primary sidebar-btn sidebar-ordenes">Ordenes</button>
                             </div>
                         </div>
                     </div>
@@ -114,7 +114,7 @@
             <div class="offcanvas-footer pb-3">
                 <hr class="divider mb-3">
                 <div class="container">
-                    <div class="row justify-content-center">
+                    <div class="row justify-content-center sidebar-login">
                         <div class="col-2 px-0 pl-5">
                             <i class="fas fa-sign-out-alt fa-2x pt-2"></i>
                         </div>
@@ -132,7 +132,7 @@
 
         <!-- NavBar -->
 
-        <!-- <div class="navBar position-sticky pb-3">
+        <div class="navBar position-sticky pb-3 oculto">
             <div class="container px-0">
                 <nav class="navbar navbar-light bg-light justify-content-between">
                     <div class="col-6 pl-6" style="margin-left: 20px;">
@@ -147,17 +147,17 @@
                         </div>
                     </div>
                     <div class="col-3">
-                        <button class="btn btn-primary my-2 my-sm-0" type="submit" style="width: 100%;">Agregar
+                        <button class="btn btn-primary my-2 my-sm-0 agregar-item" type="submit" style="width: 100%;">Agregar
                             Empresa</button>
                     </div>
                 </nav>
             </div>
-        </div> -->
+        </div>
 
 
         <!-- Empresas -->
 
-        <!-- <div class="empresas">
+        <div class="empresas oculto">
             <table class="table table-primary empresas-tabla">
                 <thead>
                     <tr>
@@ -174,29 +174,29 @@
                         <td>Lorem ipsum dolor sit amet.</td>
                         <td>3.5</td>
                         <td><button type="button" class="btn btn-primary">Activo</button></td>
-                        <td><i class="fas fa-pencil-alt px-3"></i><i class="fa fa-trash"></i></td>
+                        <td><i class="fas fa-pencil-alt px-3 lapiz-agregar"></i><i class="fa fa-trash"></i></td>
                     </tr>
                     <tr>
                         <th scope="row">Pizza Hut</th>
                         <td>Lorem ipsum dolor sit amet.</td>
                         <td>3.5</td>
                         <td><button type="button" class="btn btn-primary">Activo</button></td>
-                        <td><i class="fas fa-pencil-alt px-3"></i><i class="fa fa-trash"></i></td>
+                        <td><i class="fas fa-pencil-alt px-3 lapiz-agregar"></i><i class="fa fa-trash"></i></td>
                     </tr>
                     <tr>
                         <th scope="row">Pizza Hut</th>
                         <td>Lorem ipsum dolor sit amet.</td>
                         <td>3.5</td>
                         <td><button type="button" class="btn btn-light">Inactivo</button></td>
-                        <td><i class="fas fa-pencil-alt px-3"></i><i class="fa fa-trash"></i></td>
+                        <td><i class="fas fa-pencil-alt px-3 lapiz-agregar"></i><i class="fa fa-trash"></i></td>
                     </tr>
                 </tbody>
             </table>
-        </div> -->
+        </div>
 
         <!-- AGREGAR EMPRESA -->
 
-        <!-- <div class="agregar-empresa" style="height: 100%; padding-top: 10%;">
+        <div class="agregar-empresa oculto" style="height: 100%; padding-top: 10%;">
             <div class="container">
                 <div class="row justify-content-evenly my-5">
                     <div class="col-5">
@@ -241,20 +241,20 @@
                     <div class="col-12">
                         <div class="row justify-content-evenly py-1">
                             <div class="col-4">
-                                <button type="button" class="btn btn-primary">Agregar Empresa</button>
+                                <button type="button" class="btn btn-primary empresa-agregar">Agregar Empresa</button>
                             </div>
                             <div class="col-3">
-                                <button type="button" class="btn btn-danger">Cancelar</button>
+                                <button type="button" class="btn btn-danger empresa-no-agregar">Cancelar</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
 
         <!-- PRODUCTOS -->
 
-        <!-- <div class="productos">
+        <div class="productos oculto">
             <table class="table table-primary productos-tabla">
                 <thead>
                     <tr>
@@ -269,28 +269,28 @@
                         <th scope="row">Pizza</th>
                         <td>Lorem ipsum dolor sit amet.</td>
                         <td>3.5</td>
-                        <td><i class="fas fa-pencil-alt px-3"></i><i class="fa fa-trash"></i></td>
+                        <td><i class="fas fa-pencil-alt px-3 lapiz-producto"></i><i class="fa fa-trash"></i></td>
                     </tr>
                     <tr>
                         <th scope="row">Calzones</th>
                         <td>Lorem ipsum dolor sit amet.</td>
                         <td>3.5</td>
-                        <td><i class="fas fa-pencil-alt px-3"></i><i class="fa fa-trash"></i></td>
+                        <td><i class="fas fa-pencil-alt px-3 lapiz-producto"></i><i class="fa fa-trash"></i></td>
                     </tr>
                     <tr>
                         <th scope="row">Anillos de queso</th>
                         <td>Lorem ipsum dolor sit amet.</td>
                         <td>3.5</td>
-                        <td><i class="fas fa-pencil-alt px-3"></i><i class="fa fa-trash"></i></td>
+                        <td><i class="fas fa-pencil-alt px-3 lapiz-producto"></i><i class="fa fa-trash"></i></td>
                     </tr>
                 </tbody>
             </table>
-        </div> -->
+        </div>
 
 
         <!-- AGREGAR PRODUCTOS -->
 
-        <!-- <div class="agregar-productos" style="height: 100%; padding-top: 10%;">
+        <div class="agregar-productos oculto" style="height: 100%; padding-top: 10%;">
             <div class="container">
                 <div class="row justify-content-evenly my-5">
                     <div class="col-5">
@@ -337,20 +337,20 @@
                     <div class="col-12">
                         <div class="row justify-content-evenly py-1">
                             <div class="col-4">
-                                <button type="button" class="btn btn-primary">Agregar Producto</button>
+                                <button type="button" class="btn btn-primary agregar-producto">Agregar Producto</button>
                             </div>
                             <div class="col-3">
-                                <button type="button" class="btn btn-danger">Cancelar</button>
+                                <button type="button" class="btn btn-danger agregar-no-producto">Cancelar</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
 
         <!-- MOTORISTAS -->
 
-        <!-- <div class="motoristas">
+        <div class="motoristas oculto">
             <table class="table table-primary motoristas-tabla">
                 <thead>
                     <tr>
@@ -367,29 +367,29 @@
                         <td>Lorem ipsum dolor sit amet.</td>
                         <td>3.5</td>
                         <td><button type="button" class="btn btn-light">Inactivo</button></td>
-                        <td><i class="fas fa-pencil-alt px-3"></i><i class="fa fa-trash"></i></td>
+                        <td><i class="fas fa-pencil-alt px-3 lapiz-motorista"></i><i class="fa fa-trash"></i></td>
                     </tr>
                     <tr>
                         <th scope="row">Alejandro Garcia</th>
                         <td>Lorem ipsum dolor sit amet.</td>
                         <td>3.5</td>
                         <td><button type="button" class="btn btn-primary">Activo</button></td>
-                        <td><i class="fas fa-pencil-alt px-3"></i><i class="fa fa-trash"></i></td>
+                        <td><i class="fas fa-pencil-alt px-3 lapiz-motorista"></i><i class="fa fa-trash"></i></td>
                     </tr>
                     <tr>
                         <th scope="row">Isaac Salomon</th>
                         <td>Lorem ipsum dolor sit amet.</td>
                         <td>3.5</td>
                         <td><button type="button" class="btn btn-warning">Pendiente</button></td>
-                        <td><i class="fas fa-pencil-alt px-3"></i><i class="fa fa-trash"></i></td>
+                        <td><i class="fas fa-pencil-alt px-3 lapiz-motorista"></i><i class="fa fa-trash"></i></td>
                     </tr>
                 </tbody>
             </table>
-        </div> -->
+        </div>
 
         <!-- AGREGAR MOTORISTA -->
 
-        <!-- <div class="agregar-motorista" style="height: 100%; padding-top: 10%;">
+        <div class="agregar-motorista oculto" style="height: 100%; padding-top: 10%;">
             <div class="container">
                 <div class="row justify-content-evenly my-5">
                     <div class="col-5">
@@ -436,20 +436,20 @@
                     <div class="col-12">
                         <div class="row justify-content-evenly py-1">
                             <div class="col-4">
-                                <button type="button" class="btn btn-primary">Agregar Empleado</button>
+                                <button type="button" class="btn btn-primary agregarEmpleado">Agregar Empleado</button>
                             </div>
                             <div class="col-3">
-                                <button type="button" class="btn btn-danger">Cancelar</button>
+                                <button type="button" class="btn btn-danger noAgregarEmpleado">Cancelar</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
 
         <!-- ORDENES -->
 
-        <!-- <div class="ordenes">
+        <div class="ordenes oculto">
             <table class="table table-primary ordenes-tabla">
                 <thead>
                     <tr>
@@ -466,29 +466,29 @@
                         <td>Lorem ipsum dolor sit amet.</td>
                         <td>3,500.00</td>
                         <td><button type="button" class="btn btn-light">En camino</button></td>
-                        <td><i class="fas fa-pencil-alt px-3"></i><i class="fa fa-trash"></i></td>
+                        <td><i class="fas fa-pencil-alt px-3 editar-orden"></i><i class="fa fa-trash"></i></td>
                     </tr>
                     <tr>
                         <th scope="row">54321</th>
                         <td>Lorem ipsum dolor sit amet.</td>
                         <td>12,500.00</td>
                         <td><button type="button" class="btn btn-primary">Entregada</button></td>
-                        <td><i class="fas fa-pencil-alt px-3"></i><i class="fa fa-trash"></i></td>
+                        <td><i class="fas fa-pencil-alt px-3 editar-orden"></i><i class="fa fa-trash"></i></td>
                     </tr>
                     <tr>
                         <th scope="row">55555</th>
                         <td>Lorem ipsum dolor sit amet.</td>
                         <td>1,500.00</td>
                         <td><button type="button" class="btn btn-warning">En origen</button></td>
-                        <td><i class="fas fa-pencil-alt px-3"></i><i class="fa fa-trash"></i></td>
+                        <td><i class="fas fa-pencil-alt px-3 editar-orden"></i><i class="fa fa-trash"></i></td>
                     </tr>
                 </tbody>
             </table>
-        </div> -->
+        </div>
 
         <!-- ASIGNAR ORDEN -->
 
-        <div class="asignar-orden" style="height: 100%; padding-top: 10%;">
+        <div class="asignar-orden oculto" style="height: 100%; padding-top: 10%;">
             <div class="container">
                 <div class="row justify-content-evenly my-5">
                     <div class="col-5">
@@ -561,10 +561,10 @@
                     <div class="col-12">
                         <div class="row justify-content-evenly py-1">
                             <div class="col-4">
-                                <button type="button" class="btn btn-primary">Agregar Empresa</button>
+                                <button type="button" class="btn btn-primary btn-modificar-orden">Agregar Orden</button>
                             </div>
                             <div class="col-3">
-                                <button type="button" class="btn btn-danger">Cancelar</button>
+                                <button type="button" class="btn btn-danger btn-no-modificar-orden">Cancelar</button>
                             </div>
                         </div>
                     </div>
