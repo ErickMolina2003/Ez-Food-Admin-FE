@@ -13,7 +13,8 @@ body {
     padding-top: 15vh;
 }
 
-.login-input {
+.login-input, .password-input {
+    color: white;
     background-color: transparent;
 }
 

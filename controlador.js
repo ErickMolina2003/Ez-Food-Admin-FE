@@ -31,6 +31,44 @@ const editarOrden = document.querySelectorAll('.editar-orden');
 const modificarOrden = document.querySelector('.btn-modificar-orden');
 const noModificarOrden = document.querySelector('.btn-no-modificar-orden')
 
+function logCredenciales() {
+    axios({
+        url: '../Ez-Food-BE/api/admin.php',
+        method: 'GET',
+        responseType: 'json',
+    }).then((response) => {
+
+        let usuarioLog = document.querySelector('.login-input').value;
+        let contrasenaLog = document.querySelector('.password-input').value;
+
+        if (usuarioLog && contrasenaLog) {
+            let contador = 0;
+
+            response.data.forEach((data) => {
+                if (data.usuario == usuarioLog && data.contrasena == contrasenaLog) {
+                    renderizarEmpresas();
+
+                    contador++;
+                }
+            })
+
+            if (contador == 0) {
+                alert('Usuario no encontrado\nIntente nuevamente o cree uno nuevo');
+            }
+
+        }
+
+        if (!usuarioLog || !contrasenaLog) {
+            alert('Ingrese las credenciales');
+        }
+
+
+
+    }).catch((err) => {
+        console.log(err);
+    })
+}
+
 function renderizarLogin() {
     login.classList.remove('oculto');
 }
@@ -220,7 +258,6 @@ linkToLogin.addEventListener('click', () => {
 
 
 renderizarLogin();
-renderizarEmpresas();
 renderizarAgregarEmpresas();
 renderizarAgregarProductos();
 renderizarAgregarMotoristas();
