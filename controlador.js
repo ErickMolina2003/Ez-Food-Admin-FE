@@ -32,6 +32,32 @@ const modificarOrden = document.querySelector('.btn-modificar-orden');
 const noModificarOrden = document.querySelector('.btn-no-modificar-orden')
 let tablaEmpresas = document.querySelector('.contenido-tabla-empresas');
 let tablaProductos = document.querySelector('.contenido-tabla-productos');
+let tablaRepartidores = document.querySelector('.contenido-tabla-repartidores');
+
+function crearRepartidores() {
+
+    axios({
+        url: '../Ez-Food-BE/api/admin.php?repartidores',
+        method: 'GET',
+        responseType: 'json'
+    }).then(response => {
+        response.data.forEach(motorista => {
+            tablaRepartidores.insertAdjacentHTML('beforeend',
+                `
+        <tr>
+            <th scope="row">${motorista.repartidor}</th>
+            <td>${motorista.id}</td>
+            <td><button type="button" class="btn btn-${motorista.ordenes.length > 0 ? 'primary' : 'light'}">${motorista.ordenes.length > 0 ? 'Activo' : 'Inactivo'}</button></td>
+            <td><i class="fas fa-pencil-alt px-3 lapiz-motorista"></i><i class="fa fa-trash"></i></td>
+        </tr>
+            `
+            )
+        })
+    })
+
+
+
+}
 
 function crearProductos() {
 
@@ -324,7 +350,7 @@ linkToLogin.addEventListener('click', () => {
 
     login.classList.remove('oculto');
 })
-
+crearRepartidores();
 crearEmpresas();
 crearProductos();
 renderizarLogin();
