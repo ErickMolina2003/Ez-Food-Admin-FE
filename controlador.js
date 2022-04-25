@@ -31,6 +31,43 @@ const editarOrden = document.querySelectorAll('.editar-orden');
 const modificarOrden = document.querySelector('.btn-modificar-orden');
 const noModificarOrden = document.querySelector('.btn-no-modificar-orden')
 
+let tablaEmpresas = document.querySelector('.contenido-tabla-empresas');
+
+
+function crearEmpresas() {
+    axios({
+        url: '../Ez-Food-BE/api/admin.php?empresas',
+        method: 'GET',
+        responseType: 'json'
+    }).then(response => {
+        console.log(response.data);
+        tablaEmpresas.innerHTML = ``;
+
+        response.data.forEach(empresa => {
+            tablaEmpresas.insertAdjacentHTML('beforeend',
+                `
+            <tr>
+                <th scope="row">${empresa.nombreEmpresa}</th>
+                <td>${empresa.productosEmpresa[0] ? empresa.productosEmpresa[0].categoria : 'Inactiva' }</td>
+                <td>${empresa.puntuacion}</td>
+                <td><button type="button" class="btn btn-${empresa.productosEmpresa[0] ? 'primary' : 'light'}">${empresa.productosEmpresa[0] ? 'Activo' : 'Inactivo'}</button></td>
+                <td><i class="fas fa-pencil-alt px-3 lapiz-agregar"></i><i class="fa fa-trash"></i></td>
+            </tr>   
+            `
+            )
+
+        })
+
+
+    }).catch(e => {
+        console.log(e);
+    })
+
+
+}
+
+
+
 function logCredenciales() {
     axios({
         url: '../Ez-Food-BE/api/admin.php',
@@ -256,7 +293,7 @@ linkToLogin.addEventListener('click', () => {
     login.classList.remove('oculto');
 })
 
-
+crearEmpresas();
 renderizarLogin();
 renderizarAgregarEmpresas();
 renderizarAgregarProductos();
