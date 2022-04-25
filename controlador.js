@@ -33,6 +33,31 @@ const noModificarOrden = document.querySelector('.btn-no-modificar-orden')
 let tablaEmpresas = document.querySelector('.contenido-tabla-empresas');
 let tablaProductos = document.querySelector('.contenido-tabla-productos');
 let tablaRepartidores = document.querySelector('.contenido-tabla-repartidores');
+let tablaOrden = document.querySelector('.contenido-tabla-ordenes');
+
+function crearOrdenes() {
+    axios({
+        url: '../Ez-Food-BE/api/admin.php?ordenes',
+        method: 'GET',
+        responseType: 'json'
+    }).then(res => {
+        res.data.forEach(orden => {
+            tablaOrden.insertAdjacentHTML('beforeend',
+                `
+            <tr>
+            <th scope="row">${orden.id}</th>
+            <td>${orden.repartidor ? orden.repartidor : 'Sin repartidor'}</td>
+            <td>${orden.Total}</td>
+            <td>${orden.direccionOrigen}</td>
+            <td>${orden.direccionDestino}</td>
+            <td><button type="button" class="btn btn-light">${orden.estado ? orden.estado : 'No asignada'}</button></td>
+            <td><i class="fas fa-pencil-alt px-3 editar-orden"></i><i class="fa fa-trash"></i></td>
+        </tr>
+            `
+            )
+        })
+    })
+}
 
 function crearRepartidores() {
 
@@ -66,7 +91,6 @@ function crearProductos() {
         method: 'GET',
         responseType: 'json'
     }).then(response => {
-        console.log(response.data);
         tablaProductos.innerHTML = ``;
 
         response.data.forEach(producto => {
@@ -98,7 +122,6 @@ function crearEmpresas() {
         method: 'GET',
         responseType: 'json'
     }).then(response => {
-        console.log(response.data);
         tablaEmpresas.innerHTML = ``;
 
         response.data.forEach(empresa => {
@@ -350,6 +373,7 @@ linkToLogin.addEventListener('click', () => {
 
     login.classList.remove('oculto');
 })
+crearOrdenes();
 crearRepartidores();
 crearEmpresas();
 crearProductos();
