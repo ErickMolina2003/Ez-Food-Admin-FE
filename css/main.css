@@ -59,3 +59,7 @@ body {
 .oculto {
     display: none;
 }
+
+.agregar-item {
+    width: 100%;
+}

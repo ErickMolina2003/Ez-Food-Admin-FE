@@ -34,6 +34,7 @@ let tablaEmpresas = document.querySelector('.contenido-tabla-empresas');
 let tablaProductos = document.querySelector('.contenido-tabla-productos');
 let tablaRepartidores = document.querySelector('.contenido-tabla-repartidores');
 let tablaOrden = document.querySelector('.contenido-tabla-ordenes');
+let btnAgregarElemento = document.querySelector('.agregar-elemento-btn');
 
 function crearOrdenes() {
     axios({
@@ -56,6 +57,8 @@ function crearOrdenes() {
             `
             )
         })
+
+        btnAgregarElemento.innerHTML = `<button type="button" class="btn btn-primary my-2 my-sm-0 agregar-item">Agregar Orden</button>`
     })
 }
 
@@ -78,6 +81,8 @@ function crearRepartidores() {
             `
             )
         })
+
+        btnAgregarElemento.innerHTML = `<button type="button" class="btn btn-primary my-2 my-sm-0 agregar-item">Agregar Repartidor</button>`
     })
 
 
@@ -108,7 +113,7 @@ function crearProductos() {
 
         })
 
-
+        btnAgregarElemento.innerHTML = `<button type="button" class="btn btn-primary my-2 my-sm-0 agregar-item">Agregar Producto</button>`
     }).catch(e => {
         console.log(e);
     })
@@ -256,6 +261,7 @@ function ocultarTodo() {
 linkToEmpresas.addEventListener('click', () => {
     ocultarTodo();
 
+    btnAgregarElemento.innerHTML = `<button type="button" class="btn btn-primary my-2 my-sm-0 agregar-item">Agregar Empresa</button>`
     navBar.classList.remove('oculto');
     sideBar.classList.remove('oculto');
     empresas.classList.remove('oculto');
@@ -264,6 +270,7 @@ linkToEmpresas.addEventListener('click', () => {
 linkToProductos.addEventListener('click', () => {
     ocultarTodo();
 
+    btnAgregarElemento.innerHTML= `<button type="button" class="btn btn-primary my-2 my-sm-0 agregar-item">Agregar Producto</button>`
     navBar.classList.remove('oculto');
     sideBar.classList.remove('oculto');
     productos.classList.remove('oculto');
@@ -298,6 +305,7 @@ function renderizarAgregarProductos() {
 linkToMotoristas.addEventListener('click', () => {
     ocultarTodo();
 
+    btnAgregarElemento.innerHTML= `<button type="button" class="btn btn-primary my-2 my-sm-0 agregar-item">Agregar Motorista</button>`
     navBar.classList.remove('oculto');
     sideBar.classList.remove('oculto');
     motoristas.classList.remove('oculto');
@@ -335,6 +343,7 @@ function renderizarAgregarMotoristas() {
 linkToOrdenes.addEventListener('click', () => {
     ocultarTodo();
 
+    btnAgregarElemento.innerHTML= `<button type="button" class="btn btn-primary my-2 my-sm-0 agregar-item">Agregar Orden</button>`
     navBar.classList.remove('oculto');
     sideBar.classList.remove('oculto');
     ordenes.classList.remove('oculto');
@@ -371,6 +380,7 @@ function renderizarAgregarOrdenes() {
 linkToLogin.addEventListener('click', () => {
     ocultarTodo();
 
+    btnAgregarElemento.innerHTML= `<button type="button" class="btn btn-primary my-2 my-sm-0 agregar-item">Agregar Empresa</button>`
     login.classList.remove('oculto');
 })
 crearOrdenes();
