@@ -18,6 +18,7 @@
         integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
         crossorigin="anonymous"></script>
 
+    <script defer src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>    
     <script defer src="controlador.js"></script>
     <title>Ez Food Administradores</title>
 </head>
@@ -50,23 +51,23 @@
                 <div class="col-12">
                     <div class="row justify-content-center">
                         <div class="col-6">
-                            <input type="string" class="form-control login-input" id="exampleInputEmail1"
-                                aria-describedby="emailHelp" placeholder="Username">
+                            <input type="string" class="form-control login-input" aria-describedby="emailHelp"
+                                placeholder="Username">
                         </div>
                     </div>
                 </div>
                 <div class="col-12 mt-4 mb-5">
                     <div class="row justify-content-center">
                         <div class="col-6">
-                            <input type="string" class="form-control login-input" id="exampleInputEmail1"
-                                aria-describedby="emailHelp" placeholder="Username">
+                            <input type="password" class="form-control password-input" aria-describedby="emailHelp"
+                                placeholder="Password">
                         </div>
                     </div>
                 </div>
                 <div class="col-12">
                     <div class="row justify-content-center">
                         <div class="col-6">
-                            <button type="button" class="btn btn-light login-btn">LOGIN</button>
+                            <button type="button" class="btn btn-light login-btn" onclick="logCredenciales()">LOGIN</button>
                         </div>
                     </div>
                 </div>
@@ -101,10 +102,14 @@
                     <div class="row justify-content-center">
                         <div class="col-12">
                             <div class="btn-group-vertical sidebar-btn-container">
-                                <button type="button" class="btn btn-primary sidebar-btn sidebar-empresas">Empresas</button>
-                                <button type="button" class="btn btn-primary sidebar-btn sidebar-productos">Productos</button>
-                                <button type="button" class="btn btn-primary sidebar-btn sidebar-motoristas">Motoristas</button>
-                                <button type="button" class="btn btn-primary sidebar-btn sidebar-ordenes">Ordenes</button>
+                                <button type="button"
+                                    class="btn btn-primary sidebar-btn sidebar-empresas">Empresas</button>
+                                <button type="button"
+                                    class="btn btn-primary sidebar-btn sidebar-productos">Productos</button>
+                                <button type="button"
+                                    class="btn btn-primary sidebar-btn sidebar-motoristas">Motoristas</button>
+                                <button type="button"
+                                    class="btn btn-primary sidebar-btn sidebar-ordenes">Ordenes</button>
                             </div>
                         </div>
                     </div>
@@ -147,7 +152,8 @@
                         </div>
                     </div>
                     <div class="col-3">
-                        <button class="btn btn-primary my-2 my-sm-0 agregar-item" type="submit" style="width: 100%;">Agregar
+                        <button class="btn btn-primary my-2 my-sm-0 agregar-item" type="submit"
+                            style="width: 100%;">Agregar
                             Empresa</button>
                     </div>
                 </nav>
@@ -213,7 +219,8 @@
                         <h6>Descripcion</h6>
                     </div>
                     <div class="col-5">
-                        <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Descripcion de la empresa" rows="3"></textarea>
+                        <textarea class="form-control" id="exampleFormControlTextarea1"
+                            placeholder="Descripcion de la empresa" rows="3"></textarea>
                     </div>
                 </div>
 
@@ -222,7 +229,8 @@
                         <h6>Direccion</h6>
                     </div>
                     <div class="col-5">
-                        <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Direccion de la empresa" rows="3"></textarea>
+                        <textarea class="form-control" id="exampleFormControlTextarea1"
+                            placeholder="Direccion de la empresa" rows="3"></textarea>
                     </div>
                 </div>
 
@@ -416,8 +424,8 @@
                         <h6>Edad</h6>
                     </div>
                     <div class="col-5">
-                        <textarea class="form-control" id="exampleFormControlTextarea1"
-                            placeholder="Edad del empleado" rows="1"></textarea>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Edad del empleado"
+                            rows="1"></textarea>
                     </div>
                 </div>
 
