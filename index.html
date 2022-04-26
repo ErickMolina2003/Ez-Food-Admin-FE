@@ -18,7 +18,7 @@
         integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
         crossorigin="anonymous"></script>
 
-    <script defer src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>    
+    <script defer src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script defer src="controlador.js"></script>
     <title>Ez Food Administradores</title>
 </head>
@@ -67,7 +67,8 @@
                 <div class="col-12">
                     <div class="row justify-content-center">
                         <div class="col-6">
-                            <button type="button" class="btn btn-light login-btn" onclick="logCredenciales()">LOGIN</button>
+                            <button type="button" class="btn btn-light login-btn"
+                                onclick="logCredenciales()">LOGIN</button>
                         </div>
                     </div>
                 </div>
@@ -195,8 +196,18 @@
                         <h6>Nombre</h6>
                     </div>
                     <div class="col-5">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Nombre de Empresa"
+                        <input class="form-control mr-sm-2 nombre-empresa" type="text" placeholder="Nombre de Empresa"
                             aria-label="Nombre de Empresa">
+                    </div>
+                </div>
+
+                <div class="row justify-content-evenly my-5">
+                    <div class="col-5">
+                        <h6>Categoria</h6>
+                    </div>
+                    <div class="col-5">
+                        <textarea class="form-control categoria-empresa" id="exampleFormControlTextarea1"
+                            placeholder="Categoria de la empresa" rows="3"></textarea>
                     </div>
                 </div>
 
@@ -205,29 +216,18 @@
                         <h6>Descripcion</h6>
                     </div>
                     <div class="col-5">
-                        <textarea class="form-control" id="exampleFormControlTextarea1"
+                        <textarea class="form-control descripcion-empresa" id="exampleFormControlTextarea1"
                             placeholder="Descripcion de la empresa" rows="3"></textarea>
                     </div>
                 </div>
 
                 <div class="row justify-content-evenly my-5">
                     <div class="col-5">
-                        <h6>Direccion</h6>
+                        <h6>Puntuacion</h6>
                     </div>
                     <div class="col-5">
-                        <textarea class="form-control" id="exampleFormControlTextarea1"
-                            placeholder="Direccion de la empresa" rows="3"></textarea>
-                    </div>
-                </div>
-
-                <div class="row justify-content-evenly my-5">
-                    <div class="col-5">
-                        <h6>Foto</h6>
-                    </div>
-                    <div class="col-5">
-                        <div class="form-group">
-                            <input type="file" class="form-control-file" id="exampleFormControlFile1">
-                        </div>
+                        <textarea class="form-control puntuacion-empresa" id="exampleFormControlTextarea1"
+                            placeholder="Puntuacion de la empresa" rows="3"></textarea>
                     </div>
                 </div>
 
@@ -235,7 +235,8 @@
                     <div class="col-12">
                         <div class="row justify-content-evenly py-1">
                             <div class="col-4">
-                                <button type="button" class="btn btn-primary empresa-agregar">Agregar Empresa</button>
+                                <button type="button" class="btn btn-primary empresa-agregar"
+                                    onclick="crearEmpresaNueva()">Agregar Empresa</button>
                             </div>
                             <div class="col-3">
                                 <button type="button" class="btn btn-danger empresa-no-agregar">Cancelar</button>
@@ -281,8 +282,8 @@
                         <h6>Nombre</h6>
                     </div>
                     <div class="col-5">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Nombre de Producto"
-                            aria-label="Nombre de Producto">
+                        <input class="form-control mr-sm-2 input-nombre-producto" type="text"
+                            placeholder="Nombre de Producto" aria-label="Nombre de Producto">
                     </div>
                 </div>
 
@@ -291,7 +292,7 @@
                         <h6>Descripcion</h6>
                     </div>
                     <div class="col-5">
-                        <textarea class="form-control" id="exampleFormControlTextarea1"
+                        <textarea class="form-control descripcion-nombre-producto" id="exampleFormControlTextarea1"
                             placeholder="Descripcion del Producto" rows="3"></textarea>
                     </div>
                 </div>
@@ -301,19 +302,38 @@
                         <h6>Precio</h6>
                     </div>
                     <div class="col-5">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Precio del Producto"
-                            aria-label="Precio de Producto">
+                        <input class="form-control mr-sm-2 precio-nombre-producto" type="text"
+                            placeholder="Precio del Producto">
                     </div>
                 </div>
 
                 <div class="row justify-content-evenly my-5">
                     <div class="col-5">
-                        <h6>Foto</h6>
+                        <h6>Categoria</h6>
                     </div>
                     <div class="col-5">
-                        <div class="form-group">
-                            <input type="file" class="form-control-file" id="exampleFormControlFile1">
-                        </div>
+                        <input class="form-control mr-sm-2 categoria-nombre-producto" type="text"
+                            placeholder="Categoria del Producto">
+                    </div>
+                </div>
+
+                <div class="row justify-content-evenly my-5">
+                    <div class="col-5">
+                        <h6>empresa</h6>
+                    </div>
+                    <div class="col-5">
+                        <input class="form-control mr-sm-2 empresa-nombre-producto" type="text"
+                            placeholder="Empresa del Producto">
+                    </div>
+                </div>
+
+                <div class="row justify-content-evenly my-5">
+                    <div class="col-5">
+                        <h6>id</h6>
+                    </div>
+                    <div class="col-5">
+                        <input class="form-control mr-sm-2 id-nombre-producto" type="text"
+                            placeholder="Id del Producto">
                     </div>
                 </div>
 
@@ -321,7 +341,8 @@
                     <div class="col-12">
                         <div class="row justify-content-evenly py-1">
                             <div class="col-4">
-                                <button type="button" class="btn btn-primary agregar-producto">Agregar Producto</button>
+                                <button type="button" class="btn btn-primary agregar-producto"
+                                    onclick="crearProducto()">Agregar Producto</button>
                             </div>
                             <div class="col-3">
                                 <button type="button" class="btn btn-danger agregar-no-producto">Cancelar</button>
@@ -450,68 +471,11 @@
             <div class="container">
                 <div class="row justify-content-evenly my-5">
                     <div class="col-5">
-                        <h6>Nombre</h6>
+                        <h6>ID del repartidor</h6>
                     </div>
                     <div class="col-5">
-                        <input class="form-control mr-sm-2" type="text" placeholder="ID de la orden"
-                            aria-label="ID de la orden">
-                    </div>
-                </div>
-
-                <div class="row justify-content-evenly my-5">
-                    <div class="col-5">
-                        <h6>Pedido</h6>
-                    </div>
-                    <div class="col-5">
-                        <textarea class="form-control" id="exampleFormControlTextarea1"
-                            placeholder="Descripcion del pedido" rows="3"></textarea>
-                    </div>
-                </div>
-
-                <div class="row justify-content-evenly my-5">
-                    <div class="col-5">
-                        <h6>Status</h6>
-                    </div>
-                    <div class="col-5">
-                        <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Status del pedido"
-                            rows="1"></textarea>
-                    </div>
-                </div>
-
-                <div class="row justify-content-evenly my-5">
-                    <div class="col-5">
-                        <h6>Precio</h6>
-                    </div>
-                    <div class="col-5">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Precio del pedido"
-                            aria-label="Precio del pedido">
-                    </div>
-                </div>
-
-                <div class="row justify-content-evenly my-5">
-                    <div class="col-5">
-                        <h6>Direccion</h6>
-                    </div>
-                    <div class="col-5">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Direccion del pedido"
-                            aria-label="Direccion del pedido">
-                    </div>
-                </div>
-
-                <div class="row justify-content-evenly my-5">
-                    <div class="col-5">
-                        <h6>Repartidor</h6>
-                    </div>
-                    <div class="col-5">
-                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            Erick Molina
-                        </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Alejandro Garcia</a>
-                            <a class="dropdown-item" href="#">Isaac Lazo</a>
-                            <a class="dropdown-item" href="#">Daniel Santos</a>
-                        </div>
+                        <input class="form-control mr-sm-2 nombre-repartidor-asignar" type="text"
+                            placeholder="Id del repartidor" aria-label="Nombre del repartidor">
                     </div>
                 </div>
 
@@ -519,7 +483,7 @@
                     <div class="col-12">
                         <div class="row justify-content-evenly py-1">
                             <div class="col-4">
-                                <button type="button" class="btn btn-primary btn-modificar-orden">Agregar Orden</button>
+                                <button type="button" class="btn btn-primary btn-modificar-orden" onclick="cambiarRepartidorOrden()">Agregar Orden</button>
                             </div>
                             <div class="col-3">
                                 <button type="button" class="btn btn-danger btn-no-modificar-orden">Cancelar</button>

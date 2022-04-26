@@ -35,6 +35,110 @@ let tablaProductos = document.querySelector('.contenido-tabla-productos');
 let tablaRepartidores = document.querySelector('.contenido-tabla-repartidores');
 let tablaOrden = document.querySelector('.contenido-tabla-ordenes');
 let btnAgregarElemento = document.querySelector('.agregar-elemento-btn');
+var obj;
+
+function cambiarRepartidorOrden() {
+    let idRepartidor = document.querySelector('.nombre-repartidor-asignar').value;
+    idRepartidor = parseInt(idRepartidor)
+    obj.repartidor = idRepartidor;
+    axios({
+        url: '../Ez-Food-BE/api/asignar-orden.php',
+        method: 'POST',
+        responseType: 'json',
+        data: obj,
+    }).then(response => {
+        tablaOrden.innerHTML = ``;
+        crearOrdenes();
+    }).catch(e => {
+        console.log(e);
+    })
+
+}
+
+function asignarUnaOrden(orden) {
+    navBar.classList.add('oculto');
+    ordenes.classList.add('oculto');
+
+    asignarOrden.classList.remove('oculto');
+    obj = JSON.parse(decodeURIComponent(orden))
+
+}
+
+function crearProducto() {
+
+    let nombreProducto = document.querySelector('.input-nombre-producto').value;
+    let descripcion = document.querySelector('.descripcion-nombre-producto').value;
+    let precio = document.querySelector('.precio-nombre-producto').value;
+    let categoria = document.querySelector('.categoria-nombre-producto').value;
+    let empresa = document.querySelector('.empresa-nombre-producto').value;
+    let id = document.querySelector('.id-nombre-producto').value;
+
+    let nuevoProducto = {
+        "categoria": categoria,
+        "empresa": empresa,
+        "idProducto": id,
+        "empresaProducto": nombreProducto,
+        "descripcionProducto": descripcion,
+        "precioProducto": precio,
+        "imagenProducto": "PICALIFORNIA.png"
+    }
+
+    axios({
+        url: '../Ez-Food-BE/api/crear-orden.php',
+        responseType: 'json',
+        method: 'POST',
+        data: nuevoProducto
+    }).then(res => {
+        crearProductos();
+    }).catch(e => {
+
+    })
+}
+
+function generarFormularioProducto() {
+    ocultarTodo();
+    sideBar.classList.remove('oculto');
+    agregarProductos.classList.remove('oculto');
+
+}
+
+function crearEmpresaNueva() {
+
+    nombreEmpresa = document.querySelector('.nombre-empresa').value;
+    descripcion = document.querySelector('.descripcion-empresa').value;
+    puntuacion = document.querySelector('.puntuacion-empresa').value;
+    categoria = document.querySelector('.categoria-empresa').value;
+
+
+    let empresa = {
+        'categoria': categoria,
+        'nombreEmpresa': nombreEmpresa,
+        "puntuacion": puntuacion,
+        "descripcionEmpresa": descripcion,
+        "productosEmpresa": []
+    }
+
+    axios({
+        url: '../Ez-Food-BE/api/admin.php',
+        method: 'POST',
+        responseType: 'json',
+        data: empresa
+    }).then((response) => {
+
+        crearEmpresas();
+    }).catch(e => {
+        console.log(e);
+    })
+}
+
+function generarFormularioEmpresa() {
+    ocultarTodo();
+    agregarEmpresa.classList.remove('oculto');
+    sideBar.classList.remove('oculto');
+
+
+
+}
 
 function crearOrdenes() {
     axios({
@@ -52,7 +156,7 @@ function crearOrdenes() {
             <td>${orden.direccionOrigen}</td>
             <td>${orden.direccionDestino}</td>
             <td><button type="button" class="btn btn-light">${orden.estado ? orden.estado : 'No asignada'}</button></td>
-            <td><i class="fas fa-pencil-alt px-3 editar-orden"></i><i class="fa fa-trash"></i></td>
+            <td><i class="fas fa-pencil-alt px-3 editar-orden" onclick="asignarUnaOrden('${encodeURIComponent(JSON.stringify(orden))}')"></i><i class="fa fa-trash"></i></td>
         </tr>
             `
             )
@@ -113,7 +217,7 @@ function crearProductos() {
 
         })
 
-        btnAgregarElemento.innerHTML = `<button type="button" class="btn btn-primary my-2 my-sm-0 agregar-item">Agregar Producto</button>`
+        btnAgregarElemento.innerHTML = `<button type="button" class="btn btn-primary my-2 my-sm-0 agregar-item" onclick="generarFormularioProducto()">Agregar Producto</button>`
     }).catch(e => {
         console.log(e);
     })
@@ -261,7 +365,7 @@ function ocultarTodo() {
 linkToEmpresas.addEventListener('click', () => {
     ocultarTodo();
 
-    btnAgregarElemento.innerHTML = `<button type="button" class="btn btn-primary my-2 my-sm-0 agregar-item">Agregar Empresa</button>`
+    btnAgregarElemento.innerHTML = `<button type="button" class="btn btn-primary my-2 my-sm-0 agregar-item" onclick="generarFormularioEmpresa()">Agregar Empresa</button>`
     navBar.classList.remove('oculto');
     sideBar.classList.remove('oculto');
     empresas.classList.remove('oculto');
@@ -270,7 +374,7 @@ linkToEmpresas.addEventListener('click', () => {
 linkToProductos.addEventListener('click', () => {
     ocultarTodo();
 
-    btnAgregarElemento.innerHTML= `<button type="button" class="btn btn-primary my-2 my-sm-0 agregar-item">Agregar Producto</button>`
+    btnAgregarElemento.innerHTML = `<button type="button" class="btn btn-primary my-2 my-sm-0 agregar-item" onclick="generarFormularioProducto()">Agregar Producto</button>`
     navBar.classList.remove('oculto');
     sideBar.classList.remove('oculto');
     productos.classList.remove('oculto');
@@ -305,7 +409,7 @@ function renderizarAgregarProductos() {
 linkToMotoristas.addEventListener('click', () => {
     ocultarTodo();
 
-    btnAgregarElemento.innerHTML= `<button type="button" class="btn btn-primary my-2 my-sm-0 agregar-item">Agregar Motorista</button>`
+    btnAgregarElemento.innerHTML = `<button type="button" class="btn btn-primary my-2 my-sm-0 agregar-item">Agregar Motorista</button>`
     navBar.classList.remove('oculto');
     sideBar.classList.remove('oculto');
     motoristas.classList.remove('oculto');
@@ -343,7 +447,7 @@ function renderizarAgregarMotoristas() {
 linkToOrdenes.addEventListener('click', () => {
     ocultarTodo();
 
-    btnAgregarElemento.innerHTML= `<button type="button" class="btn btn-primary my-2 my-sm-0 agregar-item">Agregar Orden</button>`
+    btnAgregarElemento.innerHTML = `<button type="button" class="btn btn-primary my-2 my-sm-0 agregar-item">Agregar Orden</button>`
     navBar.classList.remove('oculto');
     sideBar.classList.remove('oculto');
     ordenes.classList.remove('oculto');
@@ -380,7 +484,7 @@ function renderizarAgregarOrdenes() {
 linkToLogin.addEventListener('click', () => {
     ocultarTodo();
 
-    btnAgregarElemento.innerHTML= `<button type="button" class="btn btn-primary my-2 my-sm-0 agregar-item">Agregar Empresa</button>`
+    btnAgregarElemento.innerHTML = `<button type="button" class="btn btn-primary my-2 my-sm-0 agregar-item" onclick="generarFormularioEmpresa()">Agregar Empresa</button>`
     login.classList.remove('oculto');
 })
 crearOrdenes();
